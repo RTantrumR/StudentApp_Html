@@ -3,11 +3,112 @@
 <head>
   <meta charset="UTF-8">
   <title>Terms of Service - StudentApp</title>
+  <style>
+    @keyframes flowGradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+    @keyframes wave1 {
+      0%, 100% {
+        transform: translateX(-50%) translateY(0) rotate(0deg);
+      }
+      50% {
+        transform: translateX(-50%) translateY(-20px) rotate(180deg);
+      }
+    }
+    @keyframes wave2 {
+      0%, 100% {
+        transform: translateX(-50%) translateY(0) rotate(180deg);
+      }
+      50% {
+        transform: translateX(-50%) translateY(20px) rotate(360deg);
+      }
+    }
+    html, body {
+      height: 100%;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(90deg, #a78bfa, #6b2d9e, #a78bfa);
+      background-size: 200% 100%;
+      animation: flowGradient 10s ease-in-out infinite;
+      position: relative;
+    }
+    body::before,
+    body::after {
+      content: '';
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      top: -50%;
+      left: 50%;
+      background: radial-gradient(circle, rgba(139, 74, 219, 0.3) 0%, transparent 70%);
+      border-radius: 40%;
+    }
+    body::before {
+      animation: wave1 8s ease-in-out infinite;
+    }
+    body::after {
+      animation: wave2 12s ease-in-out infinite reverse;
+      background: radial-gradient(circle, rgba(167, 139, 250, 0.2) 0%, transparent 70%);
+    }
+    .container {
+      max-width: 700px;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 40px;
+      margin: 20px;
+      border-radius: 8px;
+      border: 2px solid rgba(139, 74, 219, 0.3);
+      box-shadow: 0 8px 32px rgba(138, 43, 226, 0.2);
+      backdrop-filter: blur(10px);
+      position: relative;
+      z-index: 1;
+    }
+    h1 {
+      color: #6b2d9e;
+      margin-top: 0;
+      font-size: 2em;
+    }
+    p {
+      color: #555;
+      margin-bottom: 1em;
+    }
+    a {
+      color: #8b4adb;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #6b2d9e;
+      text-decoration: underline;
+    }
+    .back-link {
+      margin-top: 30px;
+      font-weight: 500;
+    }
+  </style>
 </head>
 <body>
-  <h1>Terms of Service</h1>
-  <p>StudentApp is provided as-is for educational use. We make no guarantees regarding uptime, accuracy, or availability of Google services.</p>
-  <p>By using StudentApp, you agree to use the application responsibly and in compliance with Google policies.</p>
-  <p>StudentApp is non-commercial and open source.</p>
+  <div class="container">
+    <h1>Terms of Service</h1>
+    <p>StudentApp is provided as-is for educational use. We make no guarantees regarding uptime, accuracy, or availability of Google services.</p>
+    <p>By using StudentApp, you agree to use the application responsibly and in compliance with Google policies.</p>
+    <p>StudentApp is free to use and open source. The app may display advertisements from Google or other partners to support development and maintenance.</p>
+    <p class="back-link"><a href="index.html">← Back to Home</a></p>
+  </div>
 </body>
 </html>
